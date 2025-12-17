@@ -1,0 +1,12 @@
+---
+const { slug, labelTxt, classProps } = Astro.props;
+---
+
+<a
+    href={slug}
+    class={
+        `bg-black text-[12px] text-white px-3 md:px-5 py-1.5 md:py-2.5 rounded md:text-lg font-medium hover:bg-gray-800 transition ${classProps ?? ''}`
+    }
+>
+    {labelTxt}
+</a>

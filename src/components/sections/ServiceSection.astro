@@ -1,0 +1,201 @@
+---
+// FeatureSection.astro
+---
+
+<section class="w-full bg-white py-12 px-4 md:px-8 font-sans overflow-hidden">
+  <div class="max-w-7xl mx-auto">
+    
+    <nav class="flex border-b border-gray-200 mb-12 overflow-x-auto scrollbar-hide relative z-20" aria-label="Tabs">
+      <button data-index="0" class="tab-btn pb-4 border-b-2 border-black font-medium text-black px-4 whitespace-nowrap text-lg transition-colors duration-300 focus:outline-none">
+        Cuenta de empresa y tarjetas
+      </button>
+      <button data-index="1" class="tab-btn pb-4 border-b-2 border-transparent text-gray-500 hover:text-gray-800 px-4 whitespace-nowrap text-lg transition-colors duration-300 focus:outline-none">
+        Gestión de facturas
+      </button>
+      <button data-index="2" class="tab-btn pb-4 border-b-2 border-transparent text-gray-500 hover:text-gray-800 px-4 whitespace-nowrap text-lg transition-colors duration-300 focus:outline-none">
+        Gestión de gastos
+      </button>
+      <button data-index="3" class="tab-btn pb-4 border-b-2 border-transparent text-gray-500 hover:text-gray-800 px-4 whitespace-nowrap text-lg transition-colors duration-300 focus:outline-none">
+        Flujo de caja y contabilidad
+      </button>
+    </nav>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      
+      <div class="lg:col-span-5 space-y-6 transition-opacity duration-300 z-20 relative" id="text-content">
+        <div id="tab-tags" class="text-xs font-bold tracking-wider text-gray-800 uppercase flex gap-2 flex-wrap">
+          <span>Tarjetas</span><span class="text-gray-400">•</span>
+          <span>Transferencias</span><span class="text-gray-400">•</span>
+          <span>Subcuentas</span>
+        </div>
+
+        <h1 id="tab-title" class="text-4xl md:text-5xl font-medium leading-tight text-black min-h-[3.5rem]">
+          La cuenta de empresa hecha para negocios
+        </h1>
+
+        <p id="tab-desc" class="text-lg text-gray-600 leading-relaxed min-h-[5rem]">
+          Gana hasta un 4% anual* por usarla. Con transferencias gratis, tarjetas, subcuentas, pago de impuestos y financiación.
+        </p>
+
+        <div class="pt-4">
+          <button class="bg-black text-white text-lg font-medium px-8 py-3 rounded hover:bg-gray-800 transition-colors">
+            Abre tu cuenta
+          </button>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 relative h-[450px] w-full perspective-1000">
+        
+        <div id="slides-container" class="relative w-full h-full">
+            
+            <div class="slide-item absolute top-0 left-0 w-[85%] h-full transition-all duration-700 ease-in-out transform translate-x-0 opacity-100 scale-100 z-20 origin-left" data-index="0">
+                <img 
+                    src="https://via.placeholder.com/600x500/bae6fd/1a1a1a?text=Slide+1+Cuenta+Empresa" 
+                    alt="Slide 1" 
+                    class="w-full h-full object-contain rounded-xl shadow-lg bg-transparent" 
+                />
+            </div>
+
+            <div class="slide-item absolute top-0 left-0 w-[85%] h-full transition-all duration-700 ease-in-out transform translate-x-[115%] opacity-50 scale-95 z-10 origin-left" data-index="1">
+                <img 
+                    src="https://via.placeholder.com/600x500/ffffff/1a1a1a?text=Slide+2+Lista+Facturas" 
+                    alt="Slide 2" 
+                    class="w-full h-full object-contain rounded-xl shadow-md border border-gray-100 bg-white" 
+                />
+            </div>
+
+            <div class="slide-item absolute top-0 left-0 w-[85%] h-full transition-all duration-700 ease-in-out transform translate-x-[200%] opacity-0 scale-90 z-0 origin-left" data-index="2">
+                 <img 
+                    src="https://via.placeholder.com/600x500/f3f4f6/1a1a1a?text=Slide+3+Gastos" 
+                    alt="Slide 3" 
+                    class="w-full h-full object-contain rounded-xl shadow-lg" 
+                />
+            </div>
+
+            <div class="slide-item absolute top-0 left-0 w-[85%] h-full transition-all duration-700 ease-in-out transform translate-x-[200%] opacity-0 scale-90 z-0 origin-left" data-index="3">
+                 <img 
+                    src="https://via.placeholder.com/600x500/e5e7eb/1a1a1a?text=Slide+4+Contabilidad" 
+                    alt="Slide 4" 
+                    class="w-full h-full object-contain rounded-xl shadow-lg" 
+                />
+            </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // DATOS
+  const tabsData = [
+    {
+      title: "La cuenta de empresa hecha para negocios",
+      desc: "Gana hasta un 4% anual* por usarla. Con transferencias gratis, tarjetas, subcuentas, pago de impuestos y financiación.",
+      tags: ["Tarjetas", "•", "Transferencias", "•", "Subcuentas"]
+    },
+    {
+      title: "Olvídate del papeleo manual de facturas",
+      desc: "Digitaliza, organiza y contabiliza tus gastos automáticamente. Solo sube una foto y nuestra IA extraerá los datos por ti.",
+      tags: ["Digitalización", "•", "OCR IA", "•", "Sin Papel"]
+    },
+    {
+      title: "Control total de gastos en tiempo real",
+      desc: "Asigna presupuestos, emite tarjetas virtuales para empleados y aprueba gastos al instante desde tu móvil.",
+      tags: ["Equipos", "•", "Límites", "•", "Aprobaciones"]
+    },
+    {
+      title: "Tu contabilidad, siempre al día",
+      desc: "Conecta tus bancos y herramientas contables. Conciliación automática y exportación de datos en un solo clic.",
+      tags: ["Conciliación", "•", "Informes", "•", "Integraciones"]
+    }
+  ];
+
+  // DOM
+  const buttons = document.querySelectorAll('.tab-btn');
+  const slides = document.querySelectorAll('.slide-item');
+  const titleEl = document.getElementById('tab-title');
+  const descEl = document.getElementById('tab-desc');
+  const tagsEl = document.getElementById('tab-tags');
+  const textContent = document.getElementById('text-content');
+
+  let activeIndex = 0;
+
+  function updateCarousel(index: number) {
+    activeIndex = index;
+
+    // 1. ACTUALIZAR BOTONES
+    buttons.forEach((btn) => {
+      const button = btn as HTMLButtonElement;
+      const btnIndex = parseInt(button.dataset.index || "0");
+      if (btnIndex === index) {
+        button.classList.remove('border-transparent', 'text-gray-500');
+        button.classList.add('border-black', 'text-black');
+      } else {
+        button.classList.add('border-transparent', 'text-gray-500');
+        button.classList.remove('border-black', 'text-black');
+      }
+    });
+
+    // 2. ACTUALIZAR TEXTO
+    if(textContent) {
+        textContent.style.opacity = '0';
+        setTimeout(() => {
+            const data = tabsData[index];
+            if(titleEl) titleEl.textContent = data.title;
+            if(descEl) descEl.textContent = data.desc;
+            if(tagsEl) {
+                 tagsEl.innerHTML = data.tags.map(tag => 
+                    tag === "•" ? `<span class="text-gray-400">•</span>` : `<span>${tag}</span>`
+                 ).join('');
+            }
+            textContent.style.opacity = '1';
+        }, 200);
+    }
+
+    // 3. LÓGICA DEL SLIDER (CORE DEL EFECTO)
+    slides.forEach((slide) => {
+        const s = slide as HTMLElement;
+        const slideIndex = parseInt(s.dataset.index || "0");
+
+        // Limpiar clases base
+        s.classList.remove(
+            'translate-x-0', 'opacity-100', 'scale-100', 'z-20', // Active
+            'translate-x-[115%]', 'opacity-50', 'scale-95', 'z-10', // Next
+            'translate-x-[200%]', 'translate-x-[-115%]', 'opacity-0', 'z-0' // Hidden
+        );
+
+        if (slideIndex === index) {
+            // === ACTIVO (Centro) ===
+            s.classList.add('translate-x-0', 'opacity-100', 'scale-100', 'z-20');
+        
+        } else if (slideIndex === index + 1) {
+            // === SIGUIENTE (Se asoma a la derecha) ===
+            // translate-x-[115%] empuja el elemento a la derecha dejando ver solo un borde si el contenedor corta,
+            // o viéndose al lado si el contenedor es ancho.
+            s.classList.add('translate-x-[115%]', 'opacity-50', 'scale-95', 'z-10');
+        
+        } else if (slideIndex < index) {
+            // === ANTERIOR (Oculto a la izquierda) ===
+            s.classList.add('translate-x-[-115%]', 'opacity-0', 'z-0');
+        
+        } else {
+            // === RESTO (Oculto muy a la derecha) ===
+            s.classList.add('translate-x-[200%]', 'opacity-0', 'z-0');
+        }
+    });
+  }
+
+  // EVENT LISTENERS
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLButtonElement;
+        const index = parseInt(target.dataset.index || "0");
+        updateCarousel(index);
+    });
+  });
+
+  // Inicializar
+  updateCarousel(0);
+
+</script>

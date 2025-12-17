@@ -1,0 +1,133 @@
+---
+import { getAllMenus } from "@/lib/wp";
+import { Image } from "astro:assets";
+import { ChevronRight, Building2, ChartColumnIncreasing } from "lucide-astro";
+interface Menu {
+  title: string;
+  slug: string;
+}
+import  Cta  from "@/components/ui/Cta.astro";
+const menuItems: Menu[] = await getAllMenus();
+---
+
+<header>
+  <div class="hidden md:block">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex space-x-6 pt-2">
+        <button
+          class="bg-[#E91D76]/10 text-black px-4 py-2 rounded-lg text-[16px] flex items-center gap-2"
+        >
+          <Building2 size={16} /> Empresas y autónomos
+        </button>
+        <button
+          class="text-gray-500 hover:text-gray-900 px-4 py-2 text-[16px] flex items-center gap-2"
+        >
+           <ChartColumnIncreasing size={16} /> Asesorías 
+        </button>
+      </div>
+    </div>
+  </div>
+  <nav
+    class="sticky top-0 bg-white/95 backdrop-blur-sm z-30 py-3 border-t-0 border-transparent transition-all bot border-b shadow-sm"
+    id="navbar"
+  >
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <div class="flex items-center gap-8">
+        <a href="#" class="">
+          <Image
+            src="https://files.catbox.moe/hp0pft.png"
+            alt="Logo"
+            width={413}
+            height={58}
+            class="w-[120px] md:w-[180px] object-contain"
+          />
+        </a>
+
+        <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-700">
+          {
+            menuItems.map((item) => (
+              <a href="#" class="hover:text-black text-lg font-medium">
+                {item.title}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+      <Cta  slug="#" labelTxt="Agendar asesoría" classProps="" />
+        <button
+          class="flex items-center justify-center flex-col md:hidden focus:outline-none space-y-2 group h-10 relative w-6"
+          aria-label="Menu"
+          id="buttonClose"
+          ><span
+            class="transition-all duration-300 rounded-full bg-black h-0.5 line origin-center w-6"
+          ></span>
+          <span
+            class="transition-all duration-300 rounded-full bg-black h-0.5 line origin-center w-6"
+          ></span></button
+        >
+      </div>
+    </div>
+  </nav>
+  <nav
+    class="fixed md:hidden z-10 top-0 left-0 right-0 bg-white min-h-[100dvh] px-6 transition-transform duration-300 -translate-y-full pt-22"
+    id="mobileMenu"
+    id="mobileMenu"
+  >
+    <div class="pt-2 flex flex-col">
+      <button
+        class="bg-[#E91D76]/10 justify-center text-black px-4 w-full text-center py-2 rounded-lg text-[16px] flex items-center gap-2"
+      >
+        <Building2 size={16} /> Empresas y autónomos
+      </button>
+      <button
+        class="text-gray-500 hover:text-gray-900 justify-center px-4 w-full text-center py-2 text-[16px] flex items-center gap-2"
+      >
+        <ChartColumnIncreasing size={16} /> Asesorías
+      </button>
+      <div class="flex flex-col space-y-5 text-sm font-medium text-gray-700">
+        {
+          menuItems.map((item) => (
+            <a
+              href={item.slug}
+              class="hover:text-black text-lg font-medium border-b border-b-slate-300 py-3 flex items-center justify-between"
+            >
+              {item.title}
+              <ChevronRight />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </nav>
+</header>
+<script is:inline>
+  const menuButton = document.getElementById("buttonClose");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const lines = menuButton?.querySelectorAll("span");
+
+  let isMenuOpen = false;
+
+  menuButton?.addEventListener("click", () => {
+    isMenuOpen = !isMenuOpen;
+
+    if (isMenuOpen) {
+      // --- ABRIR MENÚ ---
+      mobileMenu?.classList.remove("-translate-y-full");
+      document.body.style.overflow = "hidden";
+
+      // 1. Aplicamos TUS posiciones específicas para formar la X
+      lines?.[0]?.classList.add("rotate-45", "translate-y-[7px]");
+      lines?.[1]?.classList.add("-rotate-45", "-translate-y-[2px]");
+    } else {
+      // --- CERRAR MENÚ (Volver al inicio) ---
+      mobileMenu?.classList.add("-translate-y-full");
+      document.body.style.overflow = "";
+
+      // 2. Quitamos EXACTAMENTE las mismas clases para volver a las líneas paralelas
+      lines?.[0]?.classList.remove("rotate-45", "translate-y-[7px]");
+      lines?.[1]?.classList.remove("-rotate-45", "-translate-y-[2px]");
+    }
+  });
+</script>

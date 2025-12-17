@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qonto Clone - Cuenta de Empresa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Animación suave para el chat */
+        .chat-widget {
+            transition: all 0.3s ease;
+        }
+
+        /* Estilo para el Badge Circular de Verifactu */
+        .verifactu-badge {
+            background: white;
+            border: 2px solid #5da598;
+            color: #1d4045;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 20;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 overflow-x-hidden">
+
+    <div class="border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex space-x-6 pt-2">
+                <button
+                    class="bg-purple-100 text-purple-700 px-4 py-2 rounded-t-lg text-sm font-medium flex items-center gap-2">
+                    <i class="ph ph-user"></i> Empresas y autónomos
+                </button>
+                <button class="text-gray-500 hover:text-gray-900 px-4 py-2 text-sm font-medium flex items-center gap-2">
+                    <i class="ph ph-chart-bar"></i> Asesorías
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="sticky top-0 bg-white/95 backdrop-blur-sm z-50 py-4 border-b border-transparent transition-all"
+        id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <div class="flex items-center gap-8">
+                <a href="#" class="text-3xl font-bold tracking-tighter">Qonto</a>
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-gray-700">
+                    <a href="#" class="hover:text-black">Servicios</a>
+                    <a href="#" class="hover:text-black">Productos</a>
+                    <a href="#" class="hover:text-black">Recursos</a>
+                    <a href="#" class="hover:text-black">Tarifas</a>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="hidden lg:flex items-center gap-1 text-sm font-medium cursor-pointer">
+                    <span class="text-lg">🇪🇸</span> ES <i class="ph ph-caret-down"></i>
+                </div>
+                <a href="#" class="text-sm font-semibold hover:underline hidden sm:block">Acceso clientes</a>
+                <a href="#"
+                    class="bg-black text-white px-5 py-2.5 rounded text-sm font-semibold hover:bg-gray-800 transition">
+                    Abrir una cuenta
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-16 pb-24 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+            <h1 class="text-5xl md:text-6xl font-medium tracking-tight text-gray-900 leading-[1.1] mb-6">
+                Tu cuenta de empresa.<br>
+                Ahora remunerada.
+            </h1>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                Gana hasta un 4 % anual* por usar Qonto en tus pagos, cobros y gastos empresariales.
+            </p>
+
+            <div class="flex flex-col items-center gap-3">
+                <button
+                    class="bg-black text-white px-8 py-3.5 rounded text-lg font-medium hover:bg-gray-800 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200">
+                    Empieza gratis
+                </button>
+                <p class="text-xs text-gray-500 mt-1">Prueba Qonto gratis 30 días.</p>
+                <div class="flex items-center gap-2 text-sm text-gray-600 mt-2">
+                    <i class="ph ph-headset"></i> Soporte al cliente todos los días.
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 max-w-7xl mx-auto px-4 relative h-[500px] flex justify-center">
+
+            <div
+                class="absolute left-0 lg:left-20 bottom-0 w-80 h-96 rounded-t-2xl overflow-hidden shadow-2xl z-10 hidden md:block">
+                <div
+                    class="absolute top-6 right-6 bg-gray-100/90 backdrop-blur px-3 py-1 rounded shadow-sm flex items-center gap-1 z-20">
+                    <span class="text-xl font-bold text-gray-900">4%</span>
+                    <i class="ph ph-arrow-up text-green-500 font-bold"></i>
+                </div>
+                <img src="https://images.unsplash.com/photo-1531539655523-c4b5dac71647?q=80&w=1000&auto=format&fit=crop"
+                    alt="Usuario feliz" class="w-full h-full object-cover">
+            </div>
+
+            <div class="relative w-full max-w-4xl mt-12 md:mt-0 flex justify-center md:justify-end">
+
+                <div class="verifactu-badge absolute top-0 left-10 md:left-40 animate-bounce-slow">
+                    <span class="block text-green-600">SOFTWARE</span>
+                    <span class="block text-lg font-bold">Verifactu</span>
+                    <span class="block text-[10px] text-gray-500">HOMOLOGADO</span>
+                </div>
+
+                <div
+                    class="bg-white rounded-xl shadow-2xl border border-gray-200 w-[600px] h-[400px] absolute right-0 md:-right-10 top-10 overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="text-2xl font-bold">Facturas</h3>
+                            <div class="bg-gray-50 p-2 rounded">
+                                <div class="text-xs text-gray-500">Importadas</div>
+                                <div class="font-mono font-bold">5303.00 €</div>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="h-8 bg-purple-50 rounded w-full flex items-center px-4 gap-4">
+                                <div class="w-4 h-4 rounded-full bg-purple-200"></div>
+                                <div class="w-1/3 h-2 bg-purple-200 rounded"></div>
+                            </div>
+                            <div class="h-8 border-b border-gray-100 w-full flex items-center px-4 gap-4">
+                                <div class="w-4 h-4 rounded-full bg-gray-200"></div>
+                                <div class="w-1/2 h-2 bg-gray-100 rounded"></div>
+                            </div>
+                            <div class="h-8 border-b border-gray-100 w-full flex items-center px-4 gap-4">
+                                <div class="w-4 h-4 rounded-full bg-gray-200"></div>
+                                <div class="w-1/3 h-2 bg-gray-100 rounded"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="absolute bottom-10 left-10 md:left-48 bg-gray-900 text-white p-6 rounded-xl w-72 h-44 shadow-2xl z-20 flex flex-col justify-between transform -rotate-3 hover:rotate-0 transition duration-500">
+                    <div class="flex justify-between items-start">
+                        <div class="w-10 h-8 bg-gradient-to-br from-yellow-200 to-yellow-500 rounded-md opacity-80">
+                        </div>
+                        <i class="ph ph-asterisk text-3xl opacity-50"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-gray-400 mb-1">Cuenta principal</div>
+                        <div class="flex justify-between items-end">
+                            <div class="text-xs text-gray-400">Saldo de la cuenta</div>
+                            <div class="font-mono text-xl font-bold">35.393,85 €</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2" id="chat-container">
+        <div id="chat-tooltip"
+            class="bg-white shadow-lg rounded-lg p-4 mb-2 flex items-center gap-3 animate-fade-in-up border border-gray-100 max-w-xs">
+            <span class="text-2xl">👋</span>
+            <div>
+                <p class="text-sm font-semibold text-gray-900">¡Hola! ¿Necesitas ayuda?</p>
+            </div>
+            <button onclick="closeTooltip()" class="text-gray-400 hover:text-gray-600 ml-2">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+
+        <button onclick="toggleChat()"
+            class="bg-black hover:bg-gray-800 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110">
+            <i class="ph ph-chat-teardrop-text text-2xl"></i>
+        </button>
+    </div>
+
+    <script>
+        // Javascript simple para interacciones básicas
+
+        // 1. Cerrar el tooltip del chat
+        function closeTooltip() {
+            const tooltip = document.getElementById('chat-tooltip');
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+                tooltip.style.display = 'none';
+            }, 300);
+        }
+
+        // 2. Simulación de abrir chat
+        function toggleChat() {
+            alert("Aquí se abriría el widget de Intercom o soporte.");
+        }
+
+        // 3. Efecto Parallax muy sutil al mover el mouse en el Hero
+        document.addEventListener('mousemove', (e) => {
+            const x = (window.innerWidth - e.pageX) / 100;
+            const y = (window.innerHeight - e.pageY) / 100;
+
+            const card = document.querySelector('.bg-gray-900.w-72'); // Tarjeta negra
+            if (card) {
+                card.style.transform = `translateX(${x}px) translateY(${y}px) rotate(-3deg)`;
+            }
+        });
+    </script>
+</body>
+
+</html>

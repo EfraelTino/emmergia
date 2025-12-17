@@ -1,11 +1,56 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/ui/Header.astro";
+import { getPageInfo } from "@/lib/wp";
+import Cta from "@/components/ui/Cta.astro";
+import ServiceSection from "@/components/sections/ServiceSection.astro";
+const { title, content } = await getPageInfo("inicio");
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={title}>
+  <Header />
+  <main class="pt-16 pb-24 relative z-0 overflow-hidden">
+    <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
+      <h1
+        class="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 leading-[1.1] mb-6"
+      >
+        Tu estudio contable de confianza.<br />
+        Contabilidad simplificada para tu empresa
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Gana tranquilidad con nuestra gestión contable, fiscal y laboral
+        diseñada para autónomos y pymes.
+      </p>
+
+      <div class="flex flex-col items-center gap-3">
+        <Cta slug="#" labelTxt="Contactar asesor" classProps="" />
+      </div>
+    </div>
+
+    <div
+      class="mt-16 max-w-7xl mx-auto px-4 relative h-[500px] flex justify-center items-center"
+    >
+      <div
+        class=" w-full rounded-t-2xl overflow-hidden shadow-2xl z-10 hidden md:block"
+      >
+        <img
+          src="https://qonto.com/blog/images/asset/30343/image/xl_avif-d278d754e042e378d03cdea8c9c875fb.avif"
+          alt="Usuario feliz"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <div class="w-full">
+        <img src="https://files.catbox.moe/clm3by.png" alt="" />
+      </div>
+      <div
+        class="relative w-full max-w-4xl mt-12 md:mt-0 flex justify-center md:justify-end"
+      >
+        <img
+          src="https://qonto.com/blog/images/asset/12462/image/xl_avif-842fa3ae798e5f711359bee0be7d0caa.avif"
+          alt=""
+        />
+      </div>
+    </div>
+    <ServiceSection />
+  </main>
 </Layout>
