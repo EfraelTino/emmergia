@@ -6,7 +6,7 @@ interface Menu {
   title: string;
   slug: string;
 }
-import  Cta  from "@/components/ui/Cta.astro";
+import Cta from "@/components/ui/Cta.astro";
 const menuItems: Menu[] = await getAllMenus();
 ---
 
@@ -22,13 +22,13 @@ const menuItems: Menu[] = await getAllMenus();
         <button
           class="text-gray-500 hover:text-gray-900 px-4 py-2 text-[16px] flex items-center gap-2"
         >
-           <ChartColumnIncreasing size={16} /> Asesorías 
+          <ChartColumnIncreasing size={16} /> Asesorías
         </button>
       </div>
     </div>
   </div>
   <nav
-    class="sticky top-0 bg-white/95 backdrop-blur-sm z-30 py-3 border-t-0 border-transparent transition-all bot border-b shadow-sm"
+    class="sticky top-0 bg-white/95 z-30 py-3 border-t-0 border-transparent transition-all border-b shadow-t-none shadow-sm"
     id="navbar"
   >
     <div class="mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
@@ -55,7 +55,7 @@ const menuItems: Menu[] = await getAllMenus();
       </div>
 
       <div class="flex items-center gap-2">
-      <Cta  slug="#" labelTxt="Agendar asesoría" classProps="" />
+        <Cta slug="#" labelTxt="Agendar asesoría" classProps="" />
         <button
           class="flex items-center justify-center flex-col md:hidden focus:outline-none space-y-2 group h-10 relative w-6"
           aria-label="Menu"

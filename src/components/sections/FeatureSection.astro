@@ -6,26 +6,17 @@ type PropsButton = {
 };
 
 const buttons: PropsButton[] = [
-  {
-    id: 0,
-    title: "Cuenta de empresa y tarjetas",
-  },
-  {
-    id: 1,
-    title: "Gestión de facturas",
-  },
-  {
-    id: 2,
-    title: "Gestión de gastos",
-  },
-  {
-    id: 3,
-    title: "Flujo de caja y contabilidad",
-  },
+  { id: 0, title: "Cuenta de empresa y tarjetas" },
+  { id: 1, title: "Gestión de facturas" },
+  { id: 2, title: "Gestión de gastos" },
+  { id: 3, title: "Flujo de caja y contabilidad" },
 ];
 ---
 
-<section class="w-full bg-white py-12 px-4 md:px-8 font-sans overflow-hidden">
+<section
+  id="feature-section"
+  class="w-full bg-white py-12 px-4 md:px-8 font-sans overflow-hidden"
+>
   <div class="max-w-7xl mx-auto">
     <nav
       class="flex border-b border-gray-200 mb-12 overflow-x-auto scrollbar-hide relative z-20 grid md:grid-cols-4"
@@ -45,25 +36,23 @@ const buttons: PropsButton[] = [
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
       <div
-        class="lg:col-span-1 space-y-6 transition-opacity duration-300 z-20 relative"
+        class="lg:col-span-1 space-y-6 transition-opacity duration-300 z-20 relative bg-white"
         id="text-content"
       >
         <div
           id="tab-tags"
           class="text-xs font-bold tracking-wider text-gray-800 uppercase flex gap-2 flex-wrap"
         >
-          <span>Tarjetas</span><span class="text-gray-400">•</span>
-          <span>Transferencias</span><span class="text-gray-400">•</span>
-          <span>Subcuentas</span>
+          <span>Tarjetas</span><span class="text-gray-400">•</span><span
+            >Transferencias</span
+          >
         </div>
-
         <h1
           id="tab-title"
           class="text-4xl md:text-5xl font-medium leading-tight text-black min-h-[3.5rem]"
         >
           La cuenta de empresa hecha para negocios
         </h1>
-
         <p
           id="tab-desc"
           class="text-lg text-gray-600 leading-relaxed min-h-[5rem]"
@@ -71,7 +60,6 @@ const buttons: PropsButton[] = [
           Gana hasta un 4% anual* por usarla. Con transferencias gratis,
           tarjetas, subcuentas, pago de impuestos y financiación.
         </p>
-
         <div class="pt-4">
           <button
             class="bg-black text-white text-lg font-medium px-8 py-3 rounded hover:bg-gray-800 transition-colors"
@@ -84,14 +72,14 @@ const buttons: PropsButton[] = [
       <div class="lg:col-span-2 relative h-[450px] w-full perspective-1000">
         <div id="slides-container" class="relative w-full h-full">
           <div
-            class="slide-item absolute top-0 left-0 w-[48%] h-full transition-all duration-700 ease-in-out transform translate-x-0 opacity-100 scale-100 z-20 origin-left"
+            class="slide-item absolute flex items-center top-0 left-0 w-[48%] h-full transition-all duration-700 ease-in-out transform translate-x-0 opacity-100 scale-100 z-20 origin-left"
             data-index="0"
           >
             <img
               src="https://files.catbox.moe/clm3by.png"
               alt="Slide 1"
-              class="w-full h-full object-contain rounded-xl shadow-lg bg-transparent"
-              id="imgpositionreplace"
+              id="target-img-0"
+              class="w-full bg-transparent"
             />
           </div>
 
@@ -102,7 +90,7 @@ const buttons: PropsButton[] = [
             <img
               src="https://qonto.com/blog/images/asset/30343/image/xl_avif-d278d754e042e378d03cdea8c9c875fb.avif"
               alt="Slide 2"
-              class="w-full h-full object-contain rounded-xl shadow-md border border-gray-100 bg-white"
+              class="w-full h-full object-cover rounded-xl bg-white"
             />
           </div>
 
@@ -113,7 +101,7 @@ const buttons: PropsButton[] = [
             <img
               src="https://qonto.com/blog/images/asset/12462/image/xl_avif-842fa3ae798e5f711359bee0be7d0caa.avif"
               alt="Slide 3"
-              class="w-full h-full object-contain rounded-xl shadow-lg"
+              class="w-full h-full object-contain rounded-xl"
             />
           </div>
 
@@ -124,7 +112,7 @@ const buttons: PropsButton[] = [
             <img
               src="https://qonto.com/blog/images/asset/12465/image/xl_avif-ea39199179ac9596a190b44f47683c17.avif"
               alt="Slide 4"
-              class="w-full h-full object-contain rounded-xl shadow-lg"
+              class="w-full h-full object-contain rounded-xl"
             />
           </div>
         </div>
@@ -132,9 +120,68 @@ const buttons: PropsButton[] = [
     </div>
   </div>
 </section>
+<section class="py-12 px-4 w-full flex justify-center">
+  <div
+    class="relative w-full max-w-7xl bg-white rounded-2xl border border-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden flex flex-col md:flex-row items-center justify-between p-8 md:p-12"
+  >
+    <div
+      class="relative z-10 w-full md:w-1/2 flex flex-col items-start space-y-6"
+    >
+      <span
+        class="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-bold tracking-wide uppercase bg-pink-50 text-pink-600"
+      >
+        Novedad
+      </span>
 
-<script>
-  // DATOS
+      <h2
+        class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 leading-[1.1]"
+      >
+        Tu cuenta crece contigo
+      </h2>
+
+      <p class="text-lg text-gray-500 leading-relaxed font-light">
+        Gana hasta un <span class="text-gray-900 font-medium">4 % anual*</span> sobre
+        tu saldo por usar tu cuenta. Y accede a tu dinero cuando lo necesites.
+      </p>
+
+      <a
+        href="#"
+        class="group inline-flex items-center text-gray-900 font-medium mt-2"
+      >
+        <span
+          class="border-b border-gray-300 group-hover:border-gray-900 pb-0.5 transition-colors duration-300"
+        >
+          Simula cuánto ganarías
+        </span>
+        <svg
+          class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+
+    <div
+      class="relative md:mt-0 md:absolute md:right-8 select-none pointer-events-none"
+    >
+      <div
+        class="font-medium tracking-tighter leading-none text-transparent bg-clip-text bg-gradient-to-br from-pink-600 to-orange-500 flex items-start"
+      >
+        <span class="text-[160px] md:text-[440px]">4</span>
+        <span class="text-[80px] md:text-[220px] mt-4 md:mt-10">%</span>
+      </div>
+    </div>
+  </div>
+</section>
+<script is:inline>
+  // DATOS COMPLETOS (Estaban faltando en tu código anterior)
   const tabsData = [
     {
       title: "La cuenta de empresa hecha para negocios",
@@ -142,23 +189,22 @@ const buttons: PropsButton[] = [
       tags: ["Tarjetas", "•", "Transferencias", "•", "Subcuentas"],
     },
     {
-      title: "Olvídate del papeleo manual de facturas",
+      title: "Gestión de facturas automatizada",
       desc: "Digitaliza, organiza y contabiliza tus gastos automáticamente. Solo sube una foto y nuestra IA extraerá los datos por ti.",
-      tags: ["Digitalización", "•", "OCR IA", "•", "Sin Papel"],
+      tags: ["Facturas", "•", "OCR IA", "•", "Digital"],
     },
     {
       title: "Control total de gastos en tiempo real",
       desc: "Asigna presupuestos, emite tarjetas virtuales para empleados y aprueba gastos al instante desde tu móvil.",
-      tags: ["Equipos", "•", "Límites", "•", "Aprobaciones"],
+      tags: ["Gastos", "•", "Presupuestos", "•", "Control"],
     },
     {
       title: "Tu contabilidad, siempre al día",
       desc: "Conecta tus bancos y herramientas contables. Conciliación automática y exportación de datos en un solo clic.",
-      tags: ["Conciliación", "•", "Informes", "•", "Integraciones"],
+      tags: ["Contabilidad", "•", "Exportación", "•", "Conciliación"],
     },
   ];
 
-  // DOM
   const buttons = document.querySelectorAll(".tab-btn");
   const slides = document.querySelectorAll(".slide-item");
   const titleEl = document.getElementById("tab-title");
@@ -166,90 +212,81 @@ const buttons: PropsButton[] = [
   const tagsEl = document.getElementById("tab-tags");
   const textContent = document.getElementById("text-content");
 
-  let activeIndex = 0;
+  function updateCarousel(index) {
+    // 1. ACTUALIZAR TEXTOS
+    if (textContent && tabsData[index]) {
+      // Efecto de fade simple
+      textContent.style.opacity = "0.5";
+      setTimeout(() => {
+        titleEl.innerText = tabsData[index].title;
+        descEl.innerText = tabsData[index].desc;
+        tagsEl.innerHTML = tabsData[index].tags
+          .map((t) =>
+            t === "•"
+              ? `<span class="text-gray-400">•</span>`
+              : `<span>${t}</span>`
+          )
+          .join("");
+        textContent.style.opacity = "1";
+      }, 150);
+    }
 
-  function updateCarousel(index: number) {
-    activeIndex = index;
-
-    // 1. ACTUALIZAR BOTONES
+    // 2. ACTUALIZAR BOTONES
     buttons.forEach((btn) => {
-      const button = btn as HTMLButtonElement;
-      const btnIndex = parseInt(button.dataset.index || "0");
+      const btnIndex = parseInt(btn.dataset.index || "0");
       if (btnIndex === index) {
-        button.classList.remove("border-transparent", "text-gray-500");
-        button.classList.add("border-black", "text-black");
+        btn.classList.remove("border-transparent", "text-gray-500");
+        btn.classList.add("border-black", "text-black");
       } else {
-        button.classList.add("border-transparent", "text-gray-500");
-        button.classList.remove("border-black", "text-black");
+        btn.classList.add("border-transparent", "text-gray-500");
+        btn.classList.remove("border-black", "text-black");
       }
     });
 
-    // 2. ACTUALIZAR TEXTO
-    if (textContent) {
-      textContent.style.opacity = "0";
-      setTimeout(() => {
-        const data = tabsData[index];
-        if (titleEl) titleEl.textContent = data.title;
-        if (descEl) descEl.textContent = data.desc;
-        if (tagsEl) {
-          tagsEl.innerHTML = data.tags
-            .map((tag) =>
-              tag === "•"
-                ? `<span class="text-gray-400">•</span>`
-                : `<span>${tag}</span>`
-            )
-            .join("");
-        }
-        textContent.style.opacity = "1";
-      }, 200);
-    }
-
-    // 3. LÓGICA DEL SLIDER (CORE DEL EFECTO)
+    // 3. ACTUALIZAR SLIDES (Posición)
     slides.forEach((slide) => {
-      const s = slide as HTMLElement;
+      const s = slide;
       const slideIndex = parseInt(s.dataset.index || "0");
+      const img = s.querySelector("img");
 
-      // Limpiar clases base
+      // Limpiamos opacidad forzada anterior si existía para resetear estado
+      // (El script de scroll se encargará de ponerla a 0 o 1 si corresponde)
+      if (img && window.scrollY < 100) img.style.opacity = "";
+
+      // Clases base
       s.classList.remove(
         "translate-x-0",
-        "opacity-100",
-        "scale-100",
-        "z-20", // Active
-        "translate-x-[110%]", // IMPORTANTE: Ajustado para mover el ancho del elemento + margen
-        "opacity-50",
-        "scale-95",
-        "z-10", // Next
-        "translate-x-[220%]",
+        "translate-x-[110%]",
         "translate-x-[-110%]",
+        "translate-x-[220%]",
+        "opacity-100",
+        "opacity-50",
         "opacity-0",
-        "z-0" // Hidden
+        "z-20",
+        "z-10",
+        "z-0"
       );
 
       if (slideIndex === index) {
-        // === ACTIVO (Centro) ===
         s.classList.add("translate-x-0", "opacity-100", "scale-100", "z-20");
       } else if (slideIndex === index + 1) {
-        // === SIGUIENTE (Visible a la derecha) ===
         s.classList.add("translate-x-[110%]", "opacity-50", "scale-95", "z-10");
       } else if (slideIndex < index) {
-        // === ANTERIOR (Oculto a la izquierda) ===
         s.classList.add("translate-x-[-110%]", "opacity-0", "z-0");
       } else {
-        // === RESTO (Oculto muy a la derecha) ===
         s.classList.add("translate-x-[220%]", "opacity-0", "z-0");
       }
     });
   }
 
-  // EVENT LISTENERS
   buttons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      const target = e.currentTarget as HTMLButtonElement;
-      const index = parseInt(target.dataset.index || "0");
+      // @ts-ignore
+      const index = parseInt(e.currentTarget.dataset.index || "0");
       updateCarousel(index);
     });
   });
 
-  // Inicializar
-  updateCarousel(0);
+  // Inicialización segura
+  document.addEventListener("DOMContentLoaded", () => updateCarousel(0));
 </script>

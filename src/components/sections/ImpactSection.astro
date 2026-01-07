@@ -1,0 +1,63 @@
+---
+// ImpactSection.astro
+const stats = [
+  {
+    value: "350+ M€",
+    label: "gestionados anualmente en contabilidad para pymes y autónomos.",
+  },
+  {
+    value: "98%",
+    label:
+      "de nuestros clientes ahorran tiempo en gestión administrativa cada mes.",
+  },
+  {
+    value: "< 48 horas",
+    label:
+      "tiempo promedio de respuesta y resolución de consultas contables complejas.",
+  },
+];
+---
+
+<section class="w-full bg-white py-24 px-4 font-sans border-b border-gray-100">
+  <div class="max-w-6xl mx-auto">
+    <div
+      class="flex flex-col lg:flex-row items-start lg:items-center justify-between mb-16 gap-8"
+    >
+      <div class="max-w-2xl">
+        <h2
+          class="text-3xl md:text-4xl font-medium tracking-tight text-gray-900 leading-tight mb-4"
+        >
+          El impacto económico real para tu negocio con Emmergia
+        </h2>
+        <p class="text-lg text-gray-500 leading-relaxed font-light">
+          Las pequeñas empresas y autónomos optimizan sus finanzas y ganan
+          tranquilidad con nuestra gestión integral. Descubre cómo impulsamos tu
+          crecimiento.
+        </p>
+      </div>
+      <div>
+        <a
+          href="#"
+          class="inline-block bg-black text-white font-medium px-8 py-3.5 rounded-md hover:bg-gray-800 transition-all shadow-sm whitespace-nowrap"
+        >
+          Solicitar estudio personalizado
+        </a>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        stats.map((stat) => (
+          <div class="bg-white border border-gray-400 rounded-xl p-8 hover:bg-pink-500 hover:rounded-3xl hover:border-pink-500 transition-all duration-500 flex flex-col items-start h-full">
+            <span class="block text-5xl md:text-6xl font-medium text-gray-900 tracking-tight mb-4">
+              {stat.value}
+            </span>
+            <p class="text-lg text-gray-600 leading-normal font-light">
+              {stat.label}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

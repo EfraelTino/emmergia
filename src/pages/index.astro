@@ -3,13 +3,20 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/ui/Header.astro";
 import { getPageInfo } from "@/lib/wp";
 import Cta from "@/components/ui/Cta.astro";
-import ServiceSection from "@/components/sections/ServiceSection.astro";
-const { title, content } = await getPageInfo("inicio");
+import FeatureSection from "@/components/sections/FeatureSection.astro";
+import DeviceSection from "@/components/sections/DeviceSection.astro";
+import SupportAndSecurity from "@/components/sections/SupportAndSecurity.astro";
+import PlansSection from "@/components/sections/PlansSection.astro";
+import ImpactSection from "@/components/sections/ImpactSection.astro";
+import BlogSection from "@/components/sections/BlogSection.astro";
+import TestimonialsSection from "@/components/sections/TestimonialsSection.astro";
+import Footer from "@/components/ui/Footer.astro";
+//const { title, content } = await getPageInfo("inicio");
 ---
 
-<Layout title={title}>
+<Layout title={"Inicio"}>
   <Header />
-  <main class="pt-16 pb-24 relative z-0 overflow-hidden">
+  <main class="pt-16 relative z-0 overflow-hidden">
     <div class="max-w-4xl mx-auto text-center px-4 relative z-10">
       <h1
         class="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 leading-[1.1] mb-6"
@@ -28,10 +35,11 @@ const { title, content } = await getPageInfo("inicio");
     </div>
 
     <div
-      class="mt-16 max-w-7xl mx-auto px-4 relative h-[500px] flex justify-center items-center"
+      class="mt-16 max-w-7xl mx-auto px-4 relative h-[500px] gap-2 flex justify-center items-start"
     >
       <div
-        class=" w-full rounded-t-2xl overflow-hidden shadow-2xl z-10 hidden md:block"
+        id="hero-side-left"
+        class="w-full rounded-t-2xl overflow-hidden shadow-2xl z-10 hidden md:block"
       >
         <img
           src="https://qonto.com/blog/images/asset/30343/image/xl_avif-d278d754e042e378d03cdea8c9c875fb.avif"
@@ -39,10 +47,18 @@ const { title, content } = await getPageInfo("inicio");
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="w-full">
-        <img src="https://files.catbox.moe/clm3by.png" alt="" />
+
+      <div class="w-full relative">
+        <img
+          src="https://files.catbox.moe/clm3by.png"
+          alt=""
+          id="hero-source-img"
+          class="transition-opacity duration-300"
+        />
       </div>
+
       <div
+        id="hero-side-right"
         class="relative w-full max-w-4xl mt-12 md:mt-0 flex justify-center md:justify-end"
       >
         <img
@@ -51,6 +67,136 @@ const { title, content } = await getPageInfo("inicio");
         />
       </div>
     </div>
-    <ServiceSection />
+    <FeatureSection />
+    <DeviceSection />
+    <SupportAndSecurity />
+    <PlansSection />
+    <ImpactSection />
+    <BlogSection />
+    <TestimonialsSection />
   </main>
+  <Footer />
 </Layout>
+<script is:inline>
+  window.addEventListener("load", () => {
+    // Referencias
+    const heroImg = document.getElementById("hero-source-img");
+    const featureSection = document.getElementById("feature-section");
+    const leftSide = document.getElementById("hero-side-left");
+    const rightSide = document.getElementById("hero-side-right");
+
+    if (!heroImg || !featureSection) return;
+
+    // 1. CREAR EL FLYER
+    const flyer = heroImg.cloneNode(true);
+    flyer.id = "hero-flyer";
+
+    Object.assign(flyer.style, {
+      position: "fixed",
+      zIndex: "9999",
+      pointerEvents: "none",
+      transformOrigin: "top left",
+      objectFit: "contain",
+      willChange: "top, left, width, height, opacity, transform", // Optimizamos transform también
+      transition: "none",
+      opacity: "0",
+    });
+
+    document.body.appendChild(flyer);
+
+    // 2. LOOP DE ANIMACIÓN
+    function updateFlyerPosition() {
+      // --- A. DETECTAR DESTINO ---
+      let activeSlideImg = document.querySelector(
+        ".slide-item.translate-x-0 img"
+      );
+      if (!activeSlideImg)
+        activeSlideImg = document.getElementById("target-img-0");
+      if (!activeSlideImg) return;
+
+      // --- B. SYNC DE IMAGEN ---
+      const currentSrc = activeSlideImg.getAttribute("src");
+      const heroSrc = heroImg.getAttribute("src");
+      if (currentSrc && currentSrc !== heroSrc) {
+        heroImg.src = currentSrc;
+        flyer.src = currentSrc;
+      }
+
+      // --- C. CÁLCULOS CENTRALES ---
+      const heroRect = heroImg.getBoundingClientRect();
+      const targetRect = activeSlideImg.getBoundingClientRect();
+
+      const startScroll = 0;
+      const endScroll = featureSection.offsetTop - 200;
+      const scrollY = window.scrollY;
+
+      let progress = (scrollY - startScroll) / (endScroll - startScroll);
+      progress = Math.max(0, Math.min(1, progress));
+
+      const easedProgress =
+        progress < 0.5
+          ? 2 * progress * progress
+          : -1 + (4 - 2 * progress) * progress;
+
+      // --- D. MOVER FLYER CENTRAL (Hacia abajo/destino) ---
+      const currentTop =
+        heroRect.top + (targetRect.top - heroRect.top) * easedProgress;
+      const currentLeft =
+        heroRect.left + (targetRect.left - heroRect.left) * easedProgress;
+      const currentWidth =
+        heroRect.width + (targetRect.width - heroRect.width) * easedProgress;
+      const currentHeight =
+        heroRect.height + (targetRect.height - heroRect.height) * easedProgress;
+
+      flyer.style.top = `${currentTop}px`;
+      flyer.style.left = `${currentLeft}px`;
+      flyer.style.width = `${currentWidth}px`;
+      flyer.style.height = `${currentHeight}px`;
+
+      // --- E. ANIMACIÓN DE LATERALES (CORREGIDO: Hacia ARRIBA y AFUERA) ---
+
+      // 1. Movimiento Horizontal (X): Las aleja del centro
+      const moveX = scrollY * 1.2;
+
+      // 2. Movimiento Vertical (Y): ¡NEGATIVO para ir hacia ARRIBA!
+      // Multiplicamos por 0.8 o 1.0 según qué tan empinada quieras la diagonal
+      const moveY = -scrollY * 1.0;
+
+      // 3. Opacidad: Que desaparezcan suavemente mientras suben
+      const sideOpacity = Math.max(0, 1 - progress * 1.5);
+
+      if (leftSide) {
+        // Izquierda: Se mueve a la izquierda (-X) y arriba (-Y)
+        leftSide.style.transform = `translate(-${moveX}px, ${moveY}px)`;
+        leftSide.style.opacity = sideOpacity.toString();
+      }
+
+      if (rightSide) {
+        // Derecha: Se mueve a la derecha (+X) y arriba (-Y)
+        rightSide.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        rightSide.style.opacity = sideOpacity.toString();
+      }
+
+      // --- F. VISIBILIDAD CENTRAL ---
+      if (progress < 0.05) {
+        heroImg.style.opacity = "1";
+        flyer.style.opacity = "0";
+        activeSlideImg.style.opacity = "1";
+      } else if (progress >= 0.05 && progress < 0.95) {
+        heroImg.style.opacity = "0";
+        flyer.style.opacity = "1";
+        activeSlideImg.style.opacity = "0";
+      } else {
+        heroImg.style.opacity = "0";
+        flyer.style.opacity = "0";
+        activeSlideImg.style.opacity = "1";
+      }
+    }
+
+    const loop = () => {
+      updateFlyerPosition();
+      requestAnimationFrame(loop);
+    };
+    loop();
+  });
+</script>

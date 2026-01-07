@@ -1,0 +1,234 @@
+---
+// SupportAndSecurity.astro
+const logos = [
+  {
+    name: "Dott",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+  },
+  { name: "Malt", url: "https://astro.build/assets/press/astro-icon-dark.svg" },
+  {
+    name: "Capchase",
+    url: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg",
+  },
+  {
+    name: "Holafly",
+    url: "https://upload.wikimedia.org/wikipedia/commons/f/f1/Vitejs-logo.svg",
+  },
+  {
+    name: "Qonto",
+    url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png",
+  },
+  {
+    name: "Emmergia",
+    url: "https://astro.build/assets/press/astro-icon-dark.svg",
+  },
+];
+---
+
+<section class="w-full bg-white py-24 border-b border-gray-100 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4">
+    <div
+      class="w-full bg-gradient-to-r from-pink-50 to-orange-50 rounded-lg p-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-20 text-center md:text-left border border-pink-100"
+    >
+      <div class="flex-shrink-0">
+        <span class="text-2xl">🚀</span>
+      </div>
+
+      <p class="text-gray-900 text-sm md:text-base font-normal">
+        Todo lo que necesitas para aceptar pagos, pagar y gestionar
+        transacciones de manera sencilla.
+      </p>
+
+      <a
+        href="#"
+        class="flex-shrink-0 px-4 py-1.5 border border-pink-200 text-pink-700 text-sm font-medium rounded hover:bg-white hover:border-pink-300 hover:shadow-sm transition-all duration-300 bg-transparent"
+      >
+        Descubre soluciones de pago
+      </a>
+    </div>
+
+    <div class="text-center mb-20">
+      <h2 class="text-3xl md:text-5xl font-medium tracking-tight text-gray-900">
+        Soporte y seguridad en todo momento
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-0 relative mb-24">
+      <div
+        class="flex flex-col items-start px-4 md:px-12 md:border-r border-gray-200"
+      >
+        <div
+          class="mb-6 p-4 rounded-2xl bg-gradient-to-br from-pink-50 to-orange-50 inline-block"
+        >
+          <svg
+            class="w-10 h-10 text-pink-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="url(#emmergia-gradient-1)"
+          >
+            <defs>
+              <linearGradient
+                id="emmergia-gradient-1"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#db2777"></stop>
+                <stop offset="100%" stop-color="#f97316"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+            ></path>
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-medium text-gray-900 mb-4 leading-snug">
+          Resolvemos tus dudas en <br class="hidden md:block" /> 5 minutos, 365 días.
+        </h3>
+        <p class="text-gray-500 text-lg font-light leading-relaxed mb-6">
+          Nuestro servicio de atención al cliente está disponible todos los días
+          del año con las mejores valoraciones del sector.
+        </p>
+        <a
+          href="#"
+          class="group inline-flex items-center text-gray-900 font-medium"
+        >
+          <span
+            class="border-b border-gray-300 group-hover:border-pink-600 group-hover:text-pink-600 transition-colors duration-300 pb-0.5"
+          >
+            Ver testimonios de clientes
+          </span>
+          <svg
+            class="w-4 h-4 ml-2 text-gray-400 group-hover:text-pink-600 transform group-hover:translate-x-1 transition-all"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="flex flex-col items-start px-4 md:px-12">
+        <div
+          class="mb-6 p-4 rounded-2xl bg-gradient-to-br from-pink-50 to-orange-50 inline-block"
+        >
+          <svg
+            class="w-10 h-10"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="url(#emmergia-gradient-2)"
+          >
+            <defs>
+              <linearGradient
+                id="emmergia-gradient-2"
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="100%"
+              >
+                <stop offset="0%" stop-color="#db2777"></stop>
+                <stop offset="100%" stop-color="#f97316"></stop>
+              </linearGradient>
+            </defs>
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.5"
+              d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+            ></path>
+          </svg>
+        </div>
+
+        <h3 class="text-2xl font-medium text-gray-900 mb-4 leading-snug">
+          Tu cuenta está totalmente <br class="hidden md:block" /> protegida y segura.
+        </h3>
+        <p class="text-gray-500 text-lg font-light leading-relaxed mb-6">
+          Tus fondos están protegidos con tecnología 3D-Secure y requisitos de
+          verificación de identidad biométrica avanzada.
+        </p>
+        <a
+          href="#"
+          class="group inline-flex items-center text-gray-900 font-medium"
+        >
+          <span
+            class="border-b border-gray-300 group-hover:border-pink-600 group-hover:text-pink-600 transition-colors duration-300 pb-0.5"
+          >
+            Seguridad en Emmergia
+          </span>
+          <svg
+            class="w-4 h-4 ml-2 text-gray-400 group-hover:text-pink-600 transform group-hover:translate-x-1 transition-all"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="relative w-full overflow-hidden mask-gradient">
+      <div
+        class="flex w-max animate-marquee grayscale hover:grayscale-0 transition-all duration-500"
+      >
+        {
+          [...logos, ...logos, ...logos].map((logo) => (
+            <div class="mx-12 flex items-center justify-center min-w-[120px]">
+              <img
+                src={logo.url}
+                alt={logo.name}
+                class="h-8 md:h-10 opacity-40 hover:opacity-100 transition-opacity duration-300 object-contain"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.33%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  .mask-gradient {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 10%,
+      black 90%,
+      transparent
+    );
+  }
+</style>

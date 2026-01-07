@@ -1,4 +1,5 @@
 // src/lib/api.ts
+
 const WP_GRAPHQL_URL = `${import.meta.env.WP_DOMAIN}/graphql`;
 
 export async function wpquery(query: string, variables: object = {}) {

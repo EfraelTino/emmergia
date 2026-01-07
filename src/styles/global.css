@@ -21,7 +21,7 @@
   --font-poly: "PolySans1", sans-serif;
 }
 
-body {
+* {
   /* Puedes usarla aquí directamente si quieres que sea la default */
   font-family: var(--font-poly);
 }

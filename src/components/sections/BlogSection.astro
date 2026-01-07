@@ -1,0 +1,94 @@
+---
+// BlogSection.astro
+const articles = [
+  {
+    title: "Novedades fiscales para autónomos 2025",
+    description:
+      "Todo lo que necesitas saber sobre las nuevas cuotas, deducciones y obligaciones fiscales que entran en vigor este año.",
+    image:
+      "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop", // Calculadora/Impuestos
+    link: "#",
+  },
+  {
+    title: "Guía completa: Factura Electrónica",
+    description:
+      "Prepara tu negocio para la normativa Crea y Crece. Descubre cómo emitir y recibir facturas electrónicas sin complicaciones.",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop", // Gráficos/Digital
+    link: "#",
+  },
+  {
+    title: "5 claves para mejorar tu flujo de caja",
+    description:
+      "Estrategias prácticas para gestionar la tesorería de tu empresa y evitar tensiones de liquidez a final de mes.",
+    image:
+      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1000&auto=format&fit=crop", // Dinero/Crecimiento
+    link: "#",
+  },
+];
+---
+
+<section class="w-full bg-white py-24 px-4 font-sans">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2
+        class="text-3xl md:text-5xl font-medium tracking-tight text-gray-900 mb-4"
+      >
+        Aprende y haz crecer tu negocio
+      </h2>
+      <p class="text-lg text-gray-500 max-w-2xl mx-auto font-light">
+        Consejos expertos, guías prácticas y actualidad fiscal para llevar la
+        gestión de tu empresa al siguiente nivel.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {
+        articles.map((article) => (
+          <a
+            href={article.link}
+            class="group flex flex-col h-full bg-white border border-gray-200 rounded-xl overflow-hidden transition-all duration-300 hover:rounded-3xl hover:border-black"
+          >
+            <div class="h-72 bg-gray-50 overflow-hidden relative">
+              <img
+                src={article.image}
+                alt={article.title}
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 h-64"
+              />
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300" />
+            </div>
+
+            <div class="p-8 flex flex-col flex-grow">
+              <h3 class="text-2xl font-medium text-gray-900 mb-3 group-hover:text-pink-600 transition-colors duration-300">
+                {article.title}
+              </h3>
+
+              <p class="text-gray-500 leading-relaxed font-light mb-8 flex-grow">
+                {article.description}
+              </p>
+
+              <div class="flex items-center text-gray-900 font-medium mt-auto group/link">
+                <span class="border-b border-transparent group-hover/link:border-pink-600 group-hover/link:text-pink-600 transition-all duration-300 pb-0.5">
+                  Leer artículo
+                </span>
+                <svg
+                  class="w-4 h-4 ml-2 transition-transform duration-300 group-hover/link:translate-x-1 group-hover/link:text-pink-600"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

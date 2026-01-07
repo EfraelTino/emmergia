@@ -1,0 +1,92 @@
+---
+// DeviceSection.astro
+---
+
+<section class="w-full bg-white py-24 px-4 overflow-hidden font-sans">
+  <div class="max-w-7xl mx-auto text-center relative">
+    <h2
+      class="text-4xl md:text-5xl font-medium tracking-tight text-gray-900 mb-8 leading-tight"
+    >
+      Fácil de usar en tu dispositivo
+    </h2>
+
+    <div class="mb-20">
+      <a
+        href="#"
+        class="inline-block bg-black text-white text-lg font-medium px-8 py-3 rounded hover:bg-gray-800 transition-colors"
+      >
+        Explora la app
+      </a>
+    </div>
+
+    <div class="relative w-full max-w-5xl mx-auto h-[450px] md:h-[750px]">
+      <div
+        class="absolute right-[-10%] md:right-[-5%] top-[10%] md:top-0 w-[100%] md:w-[85%] z-10"
+      >
+        <img
+          src="https://qonto.com/blog/images/asset/12464/image/96d5ae39e9e0db5e19d59daa34ab5bbf.png"
+          alt="Dashboard en Tablet"
+          class="w-full h-auto drop-shadow-2xl"
+        />
+      </div>
+
+      <div
+        class="absolute left-[5%] md:left-[10%] bottom-[-5%] md:bottom-[5%] w-[45%] md:w-[32%] z-20"
+      >
+        <img
+          src="https://qonto.com/blog/images/asset/12465/image/eb6025c5363530b89aad21b5d24cdf50.png"
+          alt="App Móvil"
+          class="w-full h-auto drop-shadow-2xl transition-transform hover:-translate-y-2 duration-500"
+        />
+      </div>
+
+      <div
+        class="absolute left-[-2%] md:left-[4%] top-[30%] md:top-[25%] w-[35%] md:w-[22%] z-10 animate-float-slow"
+      >
+        <img
+          src="https://qonto-assets.s3.eu-central-1.amazonaws.com/blog/images/cache/asset/11576/image/ecf55afe43cbbe19defa12a7f94d2d47.png"
+          alt="Tarjeta Silver"
+          class="w-full h-auto drop-shadow-lg"
+        />
+      </div>
+
+      <div
+        class="absolute left-[5%] md:left-[10%] top-[22%] md:top-[18%] w-[35%] md:w-[22%] z-30 animate-float-reverse"
+      >
+        <img
+          src="https://qonto-assets.s3.eu-central-1.amazonaws.com/blog/images/cache/asset/11577/image/59ddefae94553a47eba7306667c7481f.png"
+          alt="Tarjeta Black"
+          class="w-full h-auto drop-shadow-xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  @keyframes float-reverse {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px) translateX(2px);
+    }
+  }
+
+  .animate-float-slow {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-float-reverse {
+    animation: float-reverse 5s ease-in-out infinite;
+  }
+</style>

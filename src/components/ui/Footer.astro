@@ -1,1 +1,176 @@
-<footer></footer>
+---
+// Footer.astro
+const links = {
+  oferta: [
+    "Tarifas",
+    "Métodos de pago",
+    "Datáfono",
+    "Tarjetas de empresa",
+    "Tarjeta X",
+    "Tarjeta Virtual",
+    "Tarjeta Instant",
+    "Transferencia SEPA",
+  ],
+  servicios: [
+    "Cuenta autónomos",
+    "Cuenta microempresas",
+    "Cuenta pymes",
+    "Cuenta personas jurídicas",
+    "Cuenta en el extranjero",
+    "Creación de empresa",
+    "Creación SL",
+    "Agregador financiero",
+  ],
+  sobreNosotros: [
+    "Nuestros valores",
+    "Soporte y FAQ",
+    "Reclamaciones",
+    "Mapa del sitio",
+    "Blog",
+    "Glosario financiero",
+    "Centro de recursos",
+    "Testimonios de clientes",
+  ],
+};
+---
+
+<footer class="bg-gray-50 pt-16 pb-12 border-t border-gray-100 font-sans">
+  <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+    <div class="mb-16 md:mb-24 px-4">
+      <p
+        class="text-xs text-gray-500 text-center leading-relaxed max-w-4xl mx-auto"
+      >
+        *No es un producto de ahorro o de inversión. Tasa anual del 4% por los
+        primeros 2 meses para nuevos clientes, luego la tasa varía según el plan
+        suscrito. Mínimo de 5 transacciones de pago elegibles por mes es
+        requerido. La remuneración está limitada y sujeta a los T&C.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+      <div class="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-12">
+        <a
+          href="#"
+          class="text-3xl font-bold tracking-tight text-gray-900 mb-8"
+        >
+          Emmergia
+        </a>
+
+        <div class="text-sm text-gray-700 space-y-1 mb-8">
+          <p class="font-bold">Servicio al cliente:</p>
+          <p>Email y chat: Todos los días, 24H</p>
+          <p>Llamadas: De lunes a viernes de 9h a 19h</p>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex gap-1 text-gray-900 mb-2">
+            {
+              [1, 2, 3, 4, 5].map(() => (
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                </svg>
+              ))
+            }
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span class="text-green-500 text-lg">★</span>
+            <span class="font-medium text-gray-900">4.8</span> en Trustpilot
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <svg class="w-4 h-4 text-gray-900 fill-current" viewBox="0 0 24 24"
+              ><path
+                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.74s2.57-1.13 4.2-.67c.87.16 2.37.66 3.19 1.87-.27.16-2.31 1.34-2.31 4.14 0 3.2 2.68 4.28 2.87 4.36-.06.2-.42 1.48-1.52 3.06-.57.82-1.16 1.63-1.51 1.47zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"
+              ></path></svg
+            >
+            <span class="font-medium text-gray-900">4.7</span> en App Store
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <svg class="w-4 h-4 text-gray-900 fill-current" viewBox="0 0 24 24"
+              ><path
+                d="M3 20.5v-17c0-.83.67-1.5 1.5-1.5.2 0 .39.04.57.12l15.15 8.41c.64.35.87 1.15.52 1.79-.16.29-.42.51-.73.62L5.07 21.38c-.72.3-1.54-.06-1.84-.78-.14-.3-.19-.62-.23-.95z"
+              ></path></svg
+            >
+            <span class="font-medium text-gray-900">4.7</span> en Play Store
+          </div>
+
+          <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span
+              class="text-red-500 font-bold text-xs border border-red-500 rounded px-1"
+              >G2</span
+            >
+            <span class="font-medium text-gray-900">4.8</span> en G2
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2 md:col-span-4">
+        <h3
+          class="font-bold text-gray-900 mb-6 text-sm uppercase tracking-wide"
+        >
+          Nuestra oferta
+        </h3>
+        <ul class="space-y-4">
+          {
+            links.oferta.map((item) => (
+              <li>
+                <a
+                  href="#"
+                  class="text-sm text-gray-500 hover:text-pink-600 transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3 md:col-span-4">
+        <h3
+          class="font-bold text-gray-900 mb-6 text-sm uppercase tracking-wide"
+        >
+          Servicios
+        </h3>
+        <ul class="space-y-4">
+          {
+            links.servicios.map((item) => (
+              <li>
+                <a
+                  href="#"
+                  class="text-sm text-gray-500 hover:text-pink-600 transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3 md:col-span-4">
+        <h3
+          class="font-bold text-gray-900 mb-6 text-sm uppercase tracking-wide"
+        >
+          Sobre Emmergia
+        </h3>
+        <ul class="space-y-4">
+          {
+            links.sobreNosotros.map((item) => (
+              <li>
+                <a
+                  href="#"
+                  class="text-sm text-gray-500 hover:text-pink-600 transition-colors"
+                >
+                  {item}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
